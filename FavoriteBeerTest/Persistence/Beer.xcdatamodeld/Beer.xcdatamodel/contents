@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Beer" representedClassName="Beer" syncable="YES" codeGenerationType="class">
+        <attribute name="alcohol" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="brewersTips" optional="YES" attributeType="String"/>
+        <attribute name="ebc" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="firstBrewed" optional="YES" attributeType="String"/>
+        <attribute name="foodPairing" optional="YES" attributeType="String"/>
+        <attribute name="ibu" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="info" optional="YES" attributeType="String"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="tagline" optional="YES" attributeType="String"/>
+        <attribute name="yeast" optional="YES" attributeType="String"/>
+        <relationship name="hops" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BeerHop" inverseName="beer" inverseEntity="BeerHop"/>
+        <relationship name="malts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BeerMalt" inverseName="beer" inverseEntity="BeerMalt"/>
+    </entity>
+    <entity name="BeerHop" representedClassName="BeerHop" syncable="YES" codeGenerationType="class">
+        <attribute name="add" optional="YES" attributeType="String"/>
+        <attribute name="attribute" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="unit" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="beer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beer" inverseName="hops" inverseEntity="Beer"/>
+    </entity>
+    <entity name="BeerMalt" representedClassName="BeerMalt" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="unit" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="beer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beer" inverseName="malts" inverseEntity="Beer"/>
+    </entity>
+    <entity name="Favorite" representedClassName="Favorite" syncable="YES" codeGenerationType="class">
+        <attribute name="beerId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Beer" positionX="-63" positionY="-18" width="128" height="254"/>
+        <element name="Favorite" positionX="-54" positionY="36" width="128" height="44"/>
+        <element name="BeerMalt" positionX="-36" positionY="45" width="128" height="89"/>
+        <element name="BeerHop" positionX="-18" positionY="81" width="128" height="119"/>
+    </elements>
+</model>
