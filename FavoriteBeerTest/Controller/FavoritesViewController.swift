@@ -154,7 +154,7 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesTableViewCell", for: indexPath) as! FavoritesTableViewCell
         
         let beer = favorites[indexPath.row]
-        cell.beer = beer
+        cell.setup(with: beer)
         
         if let url = beer.imageUrl, url != "" {
             let cacheID = NSString(string: "\(beer.id)")

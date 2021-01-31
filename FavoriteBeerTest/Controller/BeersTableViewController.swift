@@ -72,7 +72,7 @@ class BeersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BeerTableViewCell", for: indexPath) as! BeerTableViewCell
         
         let beer = beers[indexPath.row]
-        cell.beer = beer
+        cell.setup(with: beer)
         
         cell.favoriteButton.addTarget(self, action: #selector(setFavorite), for: .touchUpInside)
         cell.favoriteButton.tag = indexPath.row

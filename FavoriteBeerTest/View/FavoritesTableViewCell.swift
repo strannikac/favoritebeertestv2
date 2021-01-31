@@ -11,14 +11,6 @@ class FavoritesTableViewCell: UITableViewCell {
     
     private let photoWidth: CGFloat = 30
     private let photoHeight: CGFloat = 50
-    
-    var beer: Beer? {
-        didSet {
-            if let beer = beer {
-                show(beer)
-            }
-        }
-    }
 
     let titleLabel: UILabel = {
         let lbl = UILabel()
@@ -65,7 +57,7 @@ class FavoritesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func show(_ beer: Beer) {
+    func setup(with beer: Beer) {
         titleLabel.text = beer.name
         
         var details = ""
