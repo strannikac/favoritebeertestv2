@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4023383825F36E8F004AB1F0 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023383725F36E8F004AB1F0 /* UIColor.swift */; };
+		4023383D25F36EBC004AB1F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023383C25F36EBC004AB1F0 /* Constants.swift */; };
 		40E9A13D25BC1B0B00DEBE36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A13C25BC1B0B00DEBE36 /* AppDelegate.swift */; };
 		40E9A13F25BC1B0B00DEBE36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A13E25BC1B0B00DEBE36 /* SceneDelegate.swift */; };
 		40E9A14125BC1B0B00DEBE36 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A14025BC1B0B00DEBE36 /* RootTabBarController.swift */; };
@@ -25,7 +27,6 @@
 		40E9A1C725BC9CEF00DEBE36 /* UpdaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A1C625BC9CEF00DEBE36 /* UpdaterService.swift */; };
 		40E9A1CC25BC9E1D00DEBE36 /* ActivityIndicatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A1CB25BC9E1D00DEBE36 /* ActivityIndicatorHelper.swift */; };
 		40E9A1D125BC9E4F00DEBE36 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A1D025BC9E4F00DEBE36 /* AlertView.swift */; };
-		40E9A1D625BC9E9800DEBE36 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A1D525BC9E9800DEBE36 /* StringConstants.swift */; };
 		40E9A1DC25BC9F4A00DEBE36 /* UpdatingTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A1DB25BC9F4A00DEBE36 /* UpdatingTableDelegate.swift */; };
 		40E9A1EC25BD65D700DEBE36 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A1EB25BD65D700DEBE36 /* BeerTableViewCell.swift */; };
 		40E9A1F225BD6CC100DEBE36 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9A1F125BD6CC100DEBE36 /* UIView.swift */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4023383725F36E8F004AB1F0 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4023383C25F36EBC004AB1F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		40E9A13925BC1B0B00DEBE36 /* FavoriteBeerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteBeerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E9A13C25BC1B0B00DEBE36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40E9A13E25BC1B0B00DEBE36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		40E9A1C625BC9CEF00DEBE36 /* UpdaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterService.swift; sourceTree = "<group>"; };
 		40E9A1CB25BC9E1D00DEBE36 /* ActivityIndicatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorHelper.swift; sourceTree = "<group>"; };
 		40E9A1D025BC9E4F00DEBE36 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		40E9A1D525BC9E9800DEBE36 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		40E9A1DB25BC9F4A00DEBE36 /* UpdatingTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatingTableDelegate.swift; sourceTree = "<group>"; };
 		40E9A1EB25BD65D700DEBE36 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
 		40E9A1F125BD6CC100DEBE36 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -185,7 +187,7 @@
 				40E9A1A925BC382800DEBE36 /* BeerVolumeModel.swift */,
 				40E9A1B725BC8CFF00DEBE36 /* BeerMethodModel.swift */,
 				40E9A1BC25BC8EE400DEBE36 /* BeerIngredientsModel.swift */,
-				40E9A1D525BC9E9800DEBE36 /* StringConstants.swift */,
+				4023383C25F36EBC004AB1F0 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +236,7 @@
 			children = (
 				40E9A1F125BD6CC100DEBE36 /* UIView.swift */,
 				40E9A1FB25BF350700DEBE36 /* UIViewController.swift */,
+				4023383725F36E8F004AB1F0 /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,10 +376,10 @@
 				40E9A1C725BC9CEF00DEBE36 /* UpdaterService.swift in Sources */,
 				40E9A19D25BC22C100DEBE36 /* Beer.xcdatamodeld in Sources */,
 				40E9A1A525BC26FD00DEBE36 /* BeerModel.swift in Sources */,
-				40E9A1D625BC9E9800DEBE36 /* StringConstants.swift in Sources */,
 				40E9A1BD25BC8EE400DEBE36 /* BeerIngredientsModel.swift in Sources */,
 				40E9A1D125BC9E4F00DEBE36 /* AlertView.swift in Sources */,
 				40E9A1AA25BC382800DEBE36 /* BeerVolumeModel.swift in Sources */,
+				4023383825F36E8F004AB1F0 /* UIColor.swift in Sources */,
 				40E9A19425BC223400DEBE36 /* DataController.swift in Sources */,
 				40E9A20125C32ACC00DEBE36 /* FavoritesTableViewCell.swift in Sources */,
 				40E9A1B825BC8CFF00DEBE36 /* BeerMethodModel.swift in Sources */,
@@ -389,6 +392,7 @@
 				40E9A20C25C3509900DEBE36 /* BeersTableViewController.swift in Sources */,
 				40E9A1C225BC94FB00DEBE36 /* APIService.swift in Sources */,
 				40E9A13F25BC1B0B00DEBE36 /* SceneDelegate.swift in Sources */,
+				4023383D25F36EBC004AB1F0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

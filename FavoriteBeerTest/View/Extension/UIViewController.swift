@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
     func setNavBarTitleFont() {
         self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 20)!,
+            [NSAttributedString.Key.font: Constants.Design.Font.navbar!,
              NSAttributedString.Key.foregroundColor: UIColor.black]
     }
 }

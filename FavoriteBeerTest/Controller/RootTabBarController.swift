@@ -17,7 +17,7 @@ class RootTabBarController: UITabBarController {
         let beersNavVC = UINavigationController(rootViewController: BeersTableViewController())
         let favoritesNavVC = UINavigationController(rootViewController: FavoritesViewController())
         
-        let beersTabBarItem = UITabBarItem(title: StringConstants.allBeers.rawValue, image: UIImage(systemName: "list.bullet"), tag: 0)
+        let beersTabBarItem = UITabBarItem(title: Constants.Content.allBeers, image: Constants.Design.Image.icoTabBarList, tag: 0)
         beersNavVC.tabBarItem = beersTabBarItem
         let beersVC = beersNavVC.viewControllers.first as! BeersTableViewController
         beersVC.dataController = dataController

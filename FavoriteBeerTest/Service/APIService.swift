@@ -12,15 +12,13 @@ import Foundation
 class APIService {
     
     enum Endpoints {
-        static let base = "https://api.punkapi.com/v2/beers"
-        
         case list(Int, Int)
         case image(String)
         
         var stringValue: String {
             switch self {
             case .list(let page, let perPage):
-                return Endpoints.base + "?page=\(page)&per_page=\(perPage)"
+                return Constants.API.baseUrl + "?page=\(page)&per_page=\(perPage)"
             case .image(let url):
                 return url
             }

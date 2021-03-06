@@ -33,12 +33,10 @@ class BeersTableViewController: UITableViewController {
     }
     
     private func configureUI() {
-        title = StringConstants.allBeers.rawValue
+        title = Constants.Content.allBeers
         self.setNavBarTitleFont()
         
         let refreshItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshButtonTap))
-        let navItem = UINavigationItem()
-        navItem.rightBarButtonItem = refreshItem
         self.navigationItem.rightBarButtonItem = refreshItem
         
         tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: "BeerTableViewCell")

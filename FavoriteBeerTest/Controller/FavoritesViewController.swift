@@ -18,19 +18,14 @@ class FavoritesViewController: UIViewController {
     private let photosCache = NSCache<NSString, NSData>()
     private let api: APIService = APIService()
     
-    private let btnFont = UIFont.boldSystemFont(ofSize: 16)
-    private let btnFontColor = UIColor.black
-    private let btnBgColor = UIColor.lightGray
-    private let btnBgColorSel = UIColor.white
-    
     private var sortBy = 0
     private var isSortDesc = true
     
     private let sortTypes: [String] = [
-        StringConstants.name.rawValue,
-        StringConstants.alcohol.rawValue,
-        StringConstants.ebc.rawValue,
-        StringConstants.ibu.rawValue
+        Constants.Content.name,
+        Constants.Content.alcohol,
+        Constants.Content.ebc,
+        Constants.Content.ibu
     ]
     
     private let sortStackView = UIStackView()
@@ -64,7 +59,7 @@ class FavoritesViewController: UIViewController {
         view.backgroundColor = .white
         safeArea = view.layoutMarginsGuide
 
-        title = StringConstants.favorites.rawValue
+        title = Constants.Content.favorites
         self.setNavBarTitleFont()
         
         let sortStack = UIStackView()
@@ -95,14 +90,14 @@ class FavoritesViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.setTitle(title, for: .normal)
-        button.titleLabel?.font =  btnFont
-        button.setTitleColor(btnFontColor, for: .normal)
+        button.titleLabel?.font = Constants.Design.Font.button
+        button.setTitleColor(Constants.Design.Color.Primary.buttonText, for: .normal)
         button.tag = tag
         
         if sortBy == tag {
-            button.backgroundColor = btnBgColorSel
+            button.backgroundColor = Constants.Design.Color.Primary.buttonBgSel
         } else {
-            button.backgroundColor = btnBgColor
+            button.backgroundColor = Constants.Design.Color.Primary.buttonBg
         }
         
         button.addTarget(self, action: #selector(sortButtonTaped), for: .touchUpInside)
@@ -116,9 +111,9 @@ class FavoritesViewController: UIViewController {
         } else {
             let count = sortTypes.count
             for i in 0..<count {
-                sortButtons[i].backgroundColor = btnBgColor
+                sortButtons[i].backgroundColor = Constants.Design.Color.Primary.buttonBg
             }
-            sender.backgroundColor = btnBgColorSel
+            sender.backgroundColor = Constants.Design.Color.Primary.buttonBgSel
             
             sortBy = sender.tag
             

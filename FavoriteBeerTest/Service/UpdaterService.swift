@@ -62,7 +62,7 @@ class UpdaterService {
             if error != "" {
                 beers = []
                 
-                AlertView.show(title: StringConstants.error.rawValue, message: error, controller: updatingController!)
+                AlertView.show(title: Constants.Content.error, message: error, controller: updatingController!)
             }
             
             updatingController?.didUpdate(items: beers)

@@ -15,7 +15,7 @@ class AlertView {
     class func show(title: String, message: String, controller: UIViewController) {
         DispatchQueue.main.async {
             let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: StringConstants.ok.rawValue, style: .default, handler: nil))
+            alertVC.addAction(UIAlertAction(title: Constants.Content.ok, style: .default, handler: nil))
         
             controller.present(alertVC, animated: true, completion: nil)
         }
@@ -24,7 +24,7 @@ class AlertView {
     class func show(title: String, message: String, controller: UIViewController, handler: @escaping () -> Void) {
         DispatchQueue.main.async {
             let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: StringConstants.ok.rawValue, style: .default, handler: { (action: UIAlertAction!) in
+            alertVC.addAction(UIAlertAction(title: Constants.Content.ok, style: .default, handler: { (action: UIAlertAction!) in
                 handler()
             }))
         

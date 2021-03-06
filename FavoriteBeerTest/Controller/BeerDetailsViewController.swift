@@ -13,13 +13,6 @@ class BeerDetailsViewController: UIViewController {
     var beer: Beer!
     var imgData: Data?
     
-    private let labelFont = UIFont.systemFont(ofSize: 16)
-    private let labelFontTitle = UIFont.boldSystemFont(ofSize: 16)
-    private let labelFontColor = UIColor.black
-    
-    private let stackSpacing: CGFloat = 10
-    private let stackPadding = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    
     let scrollView = UIScrollView()
     let contentView = UIView()
     var safeArea: UILayoutGuide!
@@ -59,18 +52,18 @@ class BeerDetailsViewController: UIViewController {
         titleLabel.text = title
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .right
-        titleLabel.textColor = labelFontColor
-        titleLabel.font = labelFontTitle
+        titleLabel.textColor = Constants.Design.Color.Primary.normalText
+        titleLabel.font = Constants.Design.Font.title
         
         let valueLabel = UILabel()
         valueLabel.text = value
         valueLabel.numberOfLines = 0
-        valueLabel.textColor = labelFontColor
-        valueLabel.font = labelFont
+        valueLabel.textColor = Constants.Design.Color.Primary.normalText
+        valueLabel.font = Constants.Design.Font.titleThin
         
         let stack = UIStackView(arrangedSubviews: [titleLabel, valueLabel])
         stack.axis = .horizontal
-        stack.spacing = stackSpacing
+        stack.spacing = Constants.Design.Size.stackSpacing
         stack.alignment = .leading
         stack.distribution = .fillProportionally
         
@@ -97,8 +90,8 @@ class BeerDetailsViewController: UIViewController {
                     }
                     
                     malts += name
-                    malts += ", " + StringConstants.value.rawValue + ": \(item.value)"
-                    malts += ", " + StringConstants.unit.rawValue + ": " + unit
+                    malts += ", " + Constants.Content.value + ": \(item.value)"
+                    malts += ", " + Constants.Content.unit + ": " + unit
                 }
             }
         }
@@ -116,33 +109,33 @@ class BeerDetailsViewController: UIViewController {
                     }
                     
                     hops += name
-                    hops += ", " + StringConstants.value.rawValue + ": \(item.value)"
-                    hops += ", " + StringConstants.unit.rawValue + ": " + unit
+                    hops += ", " + Constants.Content.value + ": \(item.value)"
+                    hops += ", " + Constants.Content.unit + ": " + unit
                     
                     if let add = item.add {
-                        hops += ", " + StringConstants.add.rawValue + ": " + add
+                        hops += ", " + Constants.Content.add + ": " + add
                     }
                     
                     if let attribute = item.attribute {
-                        hops += ", " + StringConstants.attribute.rawValue + ": " + attribute
+                        hops += ", " + Constants.Content.attribute + ": " + attribute
                     }
                 }
             }
         }
         
         let titles = [
-            StringConstants.name.rawValue,
-            StringConstants.alcohol.rawValue,
-            StringConstants.ebc.rawValue,
-            StringConstants.ibu.rawValue,
-            StringConstants.description.rawValue,
-            StringConstants.tagline.rawValue,
-            StringConstants.firstBrewed.rawValue,
-            StringConstants.brewersTips.rawValue,
-            StringConstants.foodPairing.rawValue,
-            StringConstants.yeast.rawValue,
-            StringConstants.malts.rawValue,
-            StringConstants.hops.rawValue
+            Constants.Content.name,
+            Constants.Content.alcohol,
+            Constants.Content.ebc,
+            Constants.Content.ibu,
+            Constants.Content.description,
+            Constants.Content.tagline,
+            Constants.Content.firstBrewed,
+            Constants.Content.brewersTips,
+            Constants.Content.foodPairing,
+            Constants.Content.yeast,
+            Constants.Content.malts,
+            Constants.Content.hops
         ];
         
         let values = [
@@ -164,7 +157,7 @@ class BeerDetailsViewController: UIViewController {
         
         for i in 0..<count {
             if var value = values[i], value != "" {
-                if titles[i] == StringConstants.alcohol.rawValue {
+                if titles[i] == Constants.Content.alcohol {
                     value += "°"
                 }
                 
@@ -185,11 +178,11 @@ class BeerDetailsViewController: UIViewController {
         }
         
         parentStack.axis = .vertical
-        parentStack.spacing = stackSpacing
+        parentStack.spacing = Constants.Design.Size.stackSpacing
         parentStack.alignment = .fill
         parentStack.distribution = .fill
         
         contentView.addSubview(parentStack)
-        parentStack.fillSuperview(padding: stackPadding)
+        parentStack.fillSuperview(padding: Constants.Design.Size.stackPadding)
     }
 }

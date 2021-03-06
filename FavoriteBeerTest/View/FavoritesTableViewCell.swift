@@ -8,14 +8,11 @@
 import UIKit
 
 class FavoritesTableViewCell: UITableViewCell {
-    
-    private let photoWidth: CGFloat = 30
-    private let photoHeight: CGFloat = 50
 
     let titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.textColor = Constants.Design.Color.Primary.normalText
+        lbl.font = Constants.Design.Font.title
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
         return lbl
@@ -23,16 +20,15 @@ class FavoritesTableViewCell: UITableViewCell {
 
     let detailsLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = UIFont.systemFont(ofSize: 12)
+        lbl.textColor = Constants.Design.Color.Primary.normalText
+        lbl.font = Constants.Design.Font.small
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
         return lbl
     }()
     
     let photoImageView: UIImageView = {
-        let image = UIImage(named: "default_beer")
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView(image: Constants.Design.Image.defaultBeer)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -44,7 +40,7 @@ class FavoritesTableViewCell: UITableViewCell {
         addSubview(detailsLabel)
         addSubview(photoImageView)
         
-        photoImageView.anchor(top: nil, left: leftAnchor, bottom: nil, right: nil, padding: UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0), width: photoWidth, height: photoHeight, enableInsets: false)
+        photoImageView.anchor(top: nil, left: leftAnchor, bottom: nil, right: nil, padding: UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0), width: Constants.Design.Size.thumbWidth, height: Constants.Design.Size.thumbHeight, enableInsets: false)
         
         titleLabel.anchor(top: topAnchor, left: photoImageView.rightAnchor, bottom: nil, right: rightAnchor, padding: UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10), width: 0, height: 0, enableInsets: false)
         
@@ -64,7 +60,7 @@ class FavoritesTableViewCell: UITableViewCell {
         
         var value = "\(beer.alcohol)"
         if value != "" {
-            details += StringConstants.vol.rawValue + ": \(value)"
+            details += Constants.Content.vol + ": \(value)"
         }
         
         value = "\(beer.ebc)"
@@ -72,7 +68,7 @@ class FavoritesTableViewCell: UITableViewCell {
             if details != "" {
                 details += ", "
             }
-            details += StringConstants.ebc.rawValue + ": \(value)"
+            details += Constants.Content.ebc + ": \(value)"
         }
         
         value = "\(beer.ibu)"
@@ -80,7 +76,7 @@ class FavoritesTableViewCell: UITableViewCell {
             if details != "" {
                 details += ", "
             }
-            details += StringConstants.ibu.rawValue + ": \(value)"
+            details += Constants.Content.ibu + ": \(value)"
         }
         
         detailsLabel.text = details
